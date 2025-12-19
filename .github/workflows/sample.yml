@@ -16,7 +16,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Print greeting
-        run: echo "${{ github.event.inputs.greeting }}, World!"
+        run: |
+          echo "${{ github.event.inputs.greeting }}, World!"
+          echo "This is the Sample Workflow."
 
       - name: Show environment info
         run: |
