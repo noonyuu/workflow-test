@@ -1,31 +1,25 @@
-name: Sample Workflow
-
+name: Workd Workflow
 on:
   workflow_dispatch:
     inputs:
-      greeting:
-        description: 'Greeting message'
+      farewell:
+        description: "Farewell message"
         required: false
-        default: 'Hello'
-
+        default: "Goodbye"
 jobs:
-  hello:
+  goodbye:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Print greeting
-        run: |
-          echo "${{ github.event.inputs.greeting }}, World!"
-          echo "This is the Sample Workflow."
-
+      - name: Print farewell
+        run: echo "${{ github.event.inputs.farewell }}, World!"
       - name: Show environment info
         run: |
           echo "Runner OS: $RUNNER_OS"
           echo "GitHub Actor: $GITHUB_ACTOR"
           echo "GitHub Repository: $GITHUB_REPOSITORY"
           echo "GitHub Ref: $GITHUB_REF"
-
       - name: List files
         run: ls -la
+        

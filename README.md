@@ -8,3 +8,6 @@ gh workflow run {ファイル名}
 
 ## 入力パラメータを指定して実行
 gh workflow run {ファイル名} -f {入力パラメータ名}={値}
+
+## ブランチを指定して実行する
+gh workflow run sample.yml --ref {ブランチ名}
